@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Instant I-Ching Oracle</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0" />
+		<meta name="description" content="Random quote generator">
+		<meta name="keywords" content="random, quote">	
+		<link rel="stylesheet" type="text/css" href="styles.css" />	
+	</head>
+	<body>
+		<div id="wrapper">		  			
+			<div class="content">
+				<div id="action">
+				<h1>The Instant I-Ching Oracle</h1>
+				<p><em>-advice on the fly-</em></p>
+				<button name="button">What Should I Do?</button>
+				</div>
+				<div title="target"><p class="quote">Focus on your dilemma.<br><br>And then hit that button!</p></div>				
+			</div>
+			<div>
+				<footer>
+				</footer>
+			</div>
+		</div>	
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script>
+		$( document ).ready(function() {
+			var quotes = [
+			"The superior man perseveres long in his course, adapts to the times, but remains firm in his direction and correct in his goals.","It is only when we have the courage to face things exactly as they are,	without any self-deception or illusion, that a light will develop out of events, by which the path to success may be recognized.","Before the beginning of great brilliance, there must be chaos. Before a brilliant person begins something great, they must look foolish in the crowd.","Change is certain. Peace is followed by disturbances; departure of evil men by their return. Such recurrences should not constitute occasions for sadness but realities for awareness, so that one may be happy in the interim.","The way of the creative works through change and transformation, so that each thing receives its true nature and destiny and comes into permanent accord with the great harmony: this is what furthers and what perseveres.","When the way comes to an end, then change. Having changed, you pass through.","The quiet and solitary man apprehends the inscrutable. He seeks nothing, holds to the mean, and remains free from entanglements.","When he discovers good in others, he should imitate it and thus make everything on earth his own. If he percieves something bad in himself, let him rid himself of it. In this way he becomes free of evil." ];
+
+			var rnd =  function() {
+				return Math.floor(Math.random() * quotes.length)
+			};
+			$("button").click(function(event) {
+				var position = rnd();
+				$(".quote").empty().append(quotes[position]);				
+			});
+		});
+		</script>		
+	</body>
+</html>
